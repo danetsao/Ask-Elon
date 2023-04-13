@@ -106,10 +106,15 @@ def parse_json_tweets(json_tweets: List[object]):
     return tweets
 
 def random_subject() -> str:
-    return "china"
+    index = randint(0, len(RANDOM_SUBJECT_LIST))
+    return RANDOM_SUBJECT_LIST[index]
 
 def random_username() -> str:
-    return "elonmusk"
+    index = randint(0, len(RANDOM_USERNAME_LIST))
+    return RANDOM_USERNAME_LIST[index]
+
+RANDOM_SUBJECT_LIST = [ "Coffee", "Adventure", "Dream", "Love", "Music", "Food", "Technology", "Nature", "Fitness", "Success", "Fashion", "Art", "Humor", "Family", "Relationships", "Travel", "Motivation", "Creativity", "Self-care", "Health", "Education", "Inspiration", "Career", "Friendship", "Goals", "Happiness", "Mindfulness", "Book", "Film", "Entrepreneurship", "Money", "Business", "Writing", "Learning", "Productivity", "Leadership", "Innovation", "Passion", "Environment", "Design", "Change", "Volunteering", "Science", "Sports", "Kindness", "Community", "Animals", "Social Media", "Photography", "Gardening", "Gratitude", "Cooking", "Peace", "Meditation", "Charity", "Fitness", "Yoga", "Beauty", "Fashion", "Veganism", "Climate", "Cycling", "Running", "Swimming", "Artificial Intelligence", "Space", "Blockchain", "Cryptocurrency", "Marketing", "Spirituality", "Parenthood", "Sustainability", "Wellness", "Reading", "Philosophy", "Culture", "Friendship", "Adventure", "Equality", "Hobbies", "Fun", "Sharing", "Learning", "Challenge", "Curiosity", "Communication", "Diversity", "Faith", "Hope", "Belief"]
+RANDOM_USERNAME_LIST = [  "elonmusk",  "TheEllenShow",  "BarackObama",  "KatyPerry",  "YouTube",  "KimKardashian",  "taylorswift13",  "Cristiano",  "realDonaldTrump",  "ladygaga",  "jtimberlake",  "NASA",  "Oprah",  "nytimes",  "KevinHart4real",  "BillGates",  "CNN",  "KingJames",  "jimmyfallon",  "NICKIMINAJ",  "ArianaGrande",  "BrunoMars",  "HillaryClinton",  "narendramodi",  "EmmaWatson",  "SportsCenter",  "SethMacFarlane",  "Drake",  "TheRock",  "johncena",  "justinbieber",  "Google",  "elonmusk",  "Reuters",  "LeoDiCaprio",  "BBCBreaking",  "shakira",  "ConanOBrien",  "NASA_Johnson",  "WarrenBuffett",  "jimmykimmel",  "MileyCyrus",  "NickCannon",  "BillClinton",  "BBCWorld",  "KimKardashian",  "iamsrk",  "andersoncooper",  "kobebryant",  "TheEconomist",  "StephenAtHome",  "nfl",  "MichelleObama",  "neiltyson",  "Snapchat",  "Adele",  "TIME",  "jason_mraz",  "GMA",  "MichaelPhelps",  "nprnews",  "ChelseaClinton",  "AliciaKeys",  "selenagomez",  "TheOnion",  "AP",  "EvaLongoria",  "aplusk",  "cnnbrk",  "Kaepernick7",  "JoeBiden",  "TheAtlantic",  "NASA_Mars",  "BreakingNews",  "MarkZuckerberg",  "justintimberlake",  "WhiteHouse",  "ABC",  "KendallJenner",  "Disney",  "CaraDelevingne",  "piersmorgan",  "KellyOsbourne",  "McDonalds",  "blakeshelton",  "katyperry",  "SnoopDogg",  "cnni",  "SHAQ",  "HuffPost",  "TheGRAMMYs",  "jack",  "GoogleMaps",  "MindyKaling",  "BBCNews",  "TIME",  "Ciara",  "kanyewest",  "TheDemocrats"]
 
 if __name__ == "__main__":
     if 1 <= 2:

@@ -9,21 +9,21 @@ MAX_INPUT_LENGTH = 20
 @app.get("/generate_tweet")
 def generate_tweet_api(subject: str, username: str) -> str:
     generated_tweet, raw_tweet_list = generate_tweets(subject, username)
-    return {"generated_tweet": generated_tweet, "tweets": raw_tweet_list, "subject": subject, "username": username}
+    return {"generated_tweet": generated_tweet,  "subject": subject, "username": username, "tweets": raw_tweet_list}
 
 #Generate tweet from given username for a random subject
 @app.get("/generate_tweet_random_subject")
 def generate_tweet_random_subject_api(username: str) -> str:
     subject = random_subject()
     generated_tweet, raw_tweet_list = generate_tweets(subject, username)
-    return {"generated_tweet": generated_tweet, "tweets": raw_tweet_list, "subject": subject, "username": username}
+    return {"generated_tweet": generated_tweet,  "subject": subject, "username": username, "tweets": raw_tweet_list}
 
-@app.get("/generate_tweet_random_subject")
+@app.get("/generate_tweet_random")
 def generate_tweet_random_everything_api() -> str:
     subject = random_subject()
     username = random_username()
     generated_tweet, raw_tweet_list = generate_tweets(subject, username)
-    return {"generated_tweet": generated_tweet, "tweets": raw_tweet_list, "subject": subject, "username": username}
+    return {"generated_tweet": generated_tweet,  "subject": subject, "username": username, "tweets": raw_tweet_list}
 
 def validate_input_length(prompt: str):
     if len(prompt) > MAX_INPUT_LENGTH:
