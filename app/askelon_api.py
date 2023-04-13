@@ -4,6 +4,10 @@ from askelon import generate_tweets, random_subject, random_username
 app = FastAPI()
 MAX_INPUT_LENGTH = 20
 
+@app.get("/")
+def welcome_message(subject: str, username: str) -> str:
+    return {"message": "Welcome to the Ask Elon API! Go to '/docs' to see FastAPI doc page"}
+
 @app.get("/generate_tweet")
 def generate_tweet_api(subject: str, username: str) -> str:
     generated_tweet, raw_tweet_list = generate_tweets(subject, username)
