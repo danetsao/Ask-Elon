@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "askelon_api.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "askelon_api.py"
+      }
+    ]
+  }

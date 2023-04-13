@@ -1,9 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from askelon import generate_tweets, random_subject, random_username
-from mangum import Mangum
 
 app = FastAPI()
-handler = Mangum(app)
 MAX_INPUT_LENGTH = 20
 
 @app.get("/generate_tweet")

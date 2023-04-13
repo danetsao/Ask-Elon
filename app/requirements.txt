@@ -1,5 +1,4 @@
 twint
 fastapi
-mangum
 uvicorn
-numpy==1.20.0
+numpy
