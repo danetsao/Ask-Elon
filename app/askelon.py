@@ -52,7 +52,7 @@ def markov_data(word_bank) -> str:
     rand_punctuation = randint(0, 3)
 
     return(res.capitalize() + punctuation[rand_punctuation])
-
+#To parse data
 def parse_data(tweets: List[str]) -> List[str]:
     word_bank = []
     for tweet in tweets:
