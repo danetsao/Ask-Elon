@@ -11,6 +11,8 @@ def main(subj: str, username: str) -> str:
 
 def generate_tweets(subj: str, username: str) -> str:
     json_tweets = search_tweets(subj, username)
+    if json_tweets == []:
+        return "No tweet availible, try again later", {}
     tweets_list = parse_json_tweets(json_tweets)
     word_bank = parse_data(tweets_list)
     finalTweet = markov_data(word_bank)
@@ -60,7 +62,7 @@ def parse_data(tweets: List[str]) -> List[str]:
         tweet = tweet.split()  
         for word in tweet:
             word = word.lower()
-            if not validate_word(word):
+            if not validate_word(word) and not_a_link(word):
                 word_bank.append(word)
     return word_bank
 
@@ -90,13 +92,9 @@ def search_tweets(subj: str, username:str) -> List[str]:
     c.Search = subj
     c.Hide_output = True
     c.Store_object = True
-    c.Retries_count = 5
     c.Store_object_tweets_list = res
-    for _ in range(100):
-        if res != []:
-            break
-        twint.run.Search(c)
-
+    c.Since = "2014-12-31"
+    twint.run.Search(c)
     return res
 
 def parse_json_tweets(json_tweets: List[object]):
@@ -116,7 +114,7 @@ def random_username() -> str:
 RANDOM_SUBJECT_LIST = [ "Coffee", "Adventure", "Dream", "Love", "Music", "Food", "Technology", "Nature", "Fitness", "Success", "Fashion", "Art", "Humor", "Family", "Relationships", "Travel", "Motivation", "Creativity", "Self-care", "Health", "Education", "Inspiration", "Career", "Friendship", "Goals", "Happiness", "Mindfulness", "Book", "Film", "Entrepreneurship", "Money", "Business", "Writing", "Learning", "Productivity", "Leadership", "Innovation", "Passion", "Environment", "Design", "Change", "Volunteering", "Science", "Sports", "Kindness", "Community", "Animals", "Social Media", "Photography", "Gardening", "Gratitude", "Cooking", "Peace", "Meditation", "Charity", "Fitness", "Yoga", "Beauty", "Fashion", "Veganism", "Climate", "Cycling", "Running", "Swimming", "Artificial Intelligence", "Space", "Blockchain", "Cryptocurrency", "Marketing", "Spirituality", "Parenthood", "Sustainability", "Wellness", "Reading", "Philosophy", "Culture", "Friendship", "Adventure", "Equality", "Hobbies", "Fun", "Sharing", "Learning", "Challenge", "Curiosity", "Communication", "Diversity", "Faith", "Hope", "Belief"]
 RANDOM_USERNAME_LIST = [  "elonmusk",  "TheEllenShow",  "BarackObama",  "KatyPerry",  "YouTube",  "KimKardashian",  "taylorswift13",  "Cristiano",  "realDonaldTrump",  "ladygaga",  "jtimberlake",  "NASA",  "Oprah",  "nytimes",  "KevinHart4real",  "BillGates",  "CNN",  "KingJames",  "jimmyfallon",  "NICKIMINAJ",  "ArianaGrande",  "BrunoMars",  "HillaryClinton",  "narendramodi",  "EmmaWatson",  "SportsCenter",  "SethMacFarlane",  "Drake",  "TheRock",  "johncena",  "justinbieber",  "Google",  "elonmusk",  "Reuters",  "LeoDiCaprio",  "BBCBreaking",  "shakira",  "ConanOBrien",  "NASA_Johnson",  "WarrenBuffett",  "jimmykimmel",  "MileyCyrus",  "NickCannon",  "BillClinton",  "BBCWorld",  "KimKardashian",  "iamsrk",  "andersoncooper",  "kobebryant",  "TheEconomist",  "StephenAtHome",  "nfl",  "MichelleObama",  "neiltyson",  "Snapchat",  "Adele",  "TIME",  "jason_mraz",  "GMA",  "MichaelPhelps",  "nprnews",  "ChelseaClinton",  "AliciaKeys",  "selenagomez",  "TheOnion",  "AP",  "EvaLongoria",  "aplusk",  "cnnbrk",  "Kaepernick7",  "JoeBiden",  "TheAtlantic",  "NASA_Mars",  "BreakingNews",  "MarkZuckerberg",  "justintimberlake",  "WhiteHouse",  "ABC",  "KendallJenner",  "Disney",  "CaraDelevingne",  "piersmorgan",  "KellyOsbourne",  "McDonalds",  "blakeshelton",  "katyperry",  "SnoopDogg",  "cnni",  "SHAQ",  "HuffPost",  "TheGRAMMYs",  "jack",  "GoogleMaps",  "MindyKaling",  "BBCNews",  "TIME",  "Ciara",  "kanyewest",  "TheDemocrats"]
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     if 1 <= 2:
         main("china", "elonmusk")
     else:

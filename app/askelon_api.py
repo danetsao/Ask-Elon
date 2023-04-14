@@ -1,8 +1,24 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from askelon import generate_tweets, random_subject, random_username
 
 app = FastAPI()
 MAX_INPUT_LENGTH = 20
+
+origins = [
+    "http://localhost",
+    "http://localhost:8000"
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 def welcome_message():
