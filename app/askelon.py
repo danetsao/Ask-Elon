@@ -11,12 +11,15 @@ def main(subj: str, username: str) -> str:
 
 def generate_tweets(subj: str, username: str) -> str:
     json_tweets = search_tweets(subj, username)
+
     if json_tweets == []:
         return "No tweet availible, try again later", {}
+    
     tweets_list = parse_json_tweets(json_tweets)
     word_bank = parse_data(tweets_list)
     finalTweet = markov_data(word_bank)
     print(finalTweet)
+    
     return finalTweet, json_tweets
 
 def markov_data(word_bank) -> str:
