@@ -17,13 +17,13 @@ const AskElon: React.FC = () => {
     console.log("Submitting for random");
     setIsLoading(true);
     const response = await 
-      fetch(`${ENDPOINT}/generate_tweet`,
+      fetch(`${ENDPOINT}/generate_tweet_random`,
       {
       method: 'GET',
-      subject: DEFAULT_SUBJECT,
-      username: DEFAULT_USERNAME
+      mode: 'no-cors' as RequestMode,
     });
-    console.log(response);
+    const response_json = await response.json();
+    console.log(response_json);
   }; 
 
   const onResult = (data: any) => {
