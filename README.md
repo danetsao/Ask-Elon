@@ -28,7 +28,7 @@ Clone the project
 ```
 
 Split your terminal
-# App Terminal
+## App Terminal
 
 ```bash
   cd app
@@ -42,7 +42,7 @@ Start server with Uvicorn
 ```bash
   uvicorn askelon_api:app
 ```
-# Site Terminal
+## Site Terminal
 
 ```bash
   cd site
