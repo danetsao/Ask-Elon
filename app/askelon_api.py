@@ -26,7 +26,7 @@ app.add_middleware(
 def welcome_message():
     return {"message": "Welcome to the Ask Elon API! Go to '/docs' to see FastAPI doc page"}
 
-@app.get("/generate_tweet")
+@app.get("/generate_tweet/")
 def generate_tweet_api(subject: str, username: str):
     generated_tweet, raw_tweet_list = generate_tweets(subject, username)
     return {"generated_tweet": generated_tweet,  "subject": subject, "username": username, "tweets": raw_tweet_list}
