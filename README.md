@@ -18,3 +18,44 @@ This is a tweet generating app that scrape users tweets and chains them into a u
 | Framework | [NextJS](https://nextjs.org/) / [React](https://reactjs.org/) |
 | Styling   | [TailwindCSS](https://tailwindcss.com/)                      |
 | Hosting   | [Vercel](https://vercel.com)                                 |
+
+## Try it yourself
+
+Clone the project
+
+```bash
+  git clone "https://github.com/danetsao/Ask-Elon"
+```
+
+Split your terminal
+### App Terminal
+
+```bash
+  cd app
+```
+Download dependancies
+
+```bash
+  python -r requirements.txt
+```
+Start server with Uvicorn
+```bash
+  uvicorn askelon_api:app
+```
+### Site Terminal
+
+```bash
+  cd site
+```
+Download dependancies
+
+```bash
+  yarn i
+```
+Start server with yarn
+```bash
+  yarn dev
+```
+
+
+More updates coming soon...
