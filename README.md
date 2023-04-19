@@ -28,7 +28,7 @@ Clone the project
 ```
 
 Split your terminal
-## App Terminal
+### App Terminal
 
 ```bash
   cd app
@@ -36,13 +36,13 @@ Split your terminal
 Download dependancies
 
 ```bash
-  ./Phase1
+  python -r requirements.txt
 ```
 Start server with Uvicorn
 ```bash
   uvicorn askelon_api:app
 ```
-## Site Terminal
+### Site Terminal
 
 ```bash
   cd site
