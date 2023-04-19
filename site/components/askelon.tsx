@@ -19,10 +19,11 @@ const AskElon: React.FC = () => {
 
   const onRandomButton = async () => {
     console.log("Submitting for random");
-    setHasResult(true);
     let response = await fetch(`${ENDPOINT}/generate_tweet_random`);
     const response_json = await response.json();
     console.log(response_json);
+    setData(response_json);
+    setHasResult(true);
   };
 
   const onSubmit = async (inputUsername: Text, inputSubject: Text) => {
