@@ -21,7 +21,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/")
 def welcome_message():
     return {"message": "Welcome to the Ask Elon API! Go to '/docs' to see FastAPI doc page"}

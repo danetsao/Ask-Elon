@@ -1,0 +1,72 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .tweet-container {
+    margin-bottom: 20px;
+  }
+  
+  .tweet {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .tweet .avatar {
+    flex: 0 0 50px;
+    margin-right: 10px;
+  }
+  
+  .tweet .avatar img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .tweet .content {
+    flex: 1;
+  }
+  
+  .tweet .content .username {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .tweet .content .timestamp {
+    font-size: 14px;
+    color: #657786;
+  }
+  
+  .tweet .content .text {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .buttons button:hover {
+    background-color: #0c8dd0;
+  }
+  
