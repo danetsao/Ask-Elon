@@ -36,7 +36,7 @@ Split your terminal
 Download dependancies
 
 ```bash
-  python -r requirements.txt
+  pip install -r requirements.txt
 ```
 Start server with Uvicorn
 ```bash
