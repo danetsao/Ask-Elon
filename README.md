@@ -7,7 +7,7 @@ This is a tweet generating app that scrape users tweets and chains them into a u
 | --------- | ------------------------------------------------------------ |
 | Language  | [Python](https://www.python.org/)                            |
 | Framework | [FastAPI](https://fastapi.tiangolo.com/)                     |
-| Hosting   | [Vercel](https://vercel.com).                                |
+| Hosting   | [Vercel](https://vercel.com)                                 |
 | Other     | [Twint](https://github.com/twintproject/twint)|
 
 #### Frontend Stack
