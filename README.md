@@ -1,6 +1,6 @@
 # IMPORTANT NOTE
 
-This Project has been put on pause due to signifacant changes to the Twitter API. Source[https://gist.github.com/moxak/ed83dd4169112a0b1669500fe855101a]
+This Project has been put on pause due to signifacant changes to the Twitter API. [Source](https://gist.github.com/moxak/ed83dd4169112a0b1669500fe855101a)
 
 
 # Ask Elon
