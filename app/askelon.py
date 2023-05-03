@@ -9,8 +9,15 @@ def main(subj: str, username: str) -> str:
     tweet = generate_tweets(subj, username)
     return tweet
 
+
+
 def generate_tweets(subj: str, username: str) -> str:
-    json_tweets = search_tweets(subj, username)
+    """" 
+        PAUSED THIS FUNCTIONALITY WHILE TWINT IS BROKEN
+        json_tweets = search_tweets(subj, username)
+    """
+    
+    json_tweets = STATIC_JSON_TWEETS
 
     if json_tweets == []:
         return "No tweet availible, try again later", {}
@@ -93,17 +100,17 @@ def search_tweets(subj: str, username:str) -> List[str]:
     c = twint.Config()
     c.Username = username
     c.Search = subj
+
     c.Hide_output = True
     c.Store_object = True
     c.Store_object_tweets_list = res
-    c.Since = "2014-12-31"
     twint.run.Search(c)
     return res
 
-def parse_json_tweets(json_tweets: List[object]):
+def parse_json_tweets(json_tweets) -> List[str]:
     tweets = []
     for r in json_tweets:
-        tweets.append(r.tweet)
+        tweets.append(r["tweet"])
     return tweets
 
 def random_subject() -> str:
@@ -116,6 +123,27 @@ def random_username() -> str:
 
 RANDOM_SUBJECT_LIST = [ "Coffee", "Adventure", "Dream", "Love", "Music", "Food", "Technology", "Nature", "Fitness", "Success", "Fashion", "Art", "Humor", "Family", "Relationships", "Travel", "Motivation", "Creativity", "Self-care", "Health", "Education", "Inspiration", "Career", "Friendship", "Goals", "Happiness", "Mindfulness", "Book", "Film", "Entrepreneurship", "Money", "Business", "Writing", "Learning", "Productivity", "Leadership", "Innovation", "Passion", "Environment", "Design", "Change", "Volunteering", "Science", "Sports", "Kindness", "Community", "Animals", "Social Media", "Photography", "Gardening", "Gratitude", "Cooking", "Peace", "Meditation", "Charity", "Fitness", "Yoga", "Beauty", "Fashion", "Veganism", "Climate", "Cycling", "Running", "Swimming", "Artificial Intelligence", "Space", "Blockchain", "Cryptocurrency", "Marketing", "Spirituality", "Parenthood", "Sustainability", "Wellness", "Reading", "Philosophy", "Culture", "Friendship", "Adventure", "Equality", "Hobbies", "Fun", "Sharing", "Learning", "Challenge", "Curiosity", "Communication", "Diversity", "Faith", "Hope", "Belief"]
 RANDOM_USERNAME_LIST = [  "elonmusk",  "TheEllenShow",  "BarackObama",  "KatyPerry",  "YouTube",  "KimKardashian",  "taylorswift13",  "Cristiano",  "realDonaldTrump",  "ladygaga",  "jtimberlake",  "NASA",  "Oprah",  "nytimes",  "KevinHart4real",  "BillGates",  "CNN",  "KingJames",  "jimmyfallon",  "NICKIMINAJ",  "ArianaGrande",  "BrunoMars",  "HillaryClinton",  "narendramodi",  "EmmaWatson",  "SportsCenter",  "SethMacFarlane",  "Drake",  "TheRock",  "johncena",  "justinbieber",  "Google",  "elonmusk",  "Reuters",  "LeoDiCaprio",  "BBCBreaking",  "shakira",  "ConanOBrien",  "NASA_Johnson",  "WarrenBuffett",  "jimmykimmel",  "MileyCyrus",  "NickCannon",  "BillClinton",  "BBCWorld",  "KimKardashian",  "iamsrk",  "andersoncooper",  "kobebryant",  "TheEconomist",  "StephenAtHome",  "nfl",  "MichelleObama",  "neiltyson",  "Snapchat",  "Adele",  "TIME",  "jason_mraz",  "GMA",  "MichaelPhelps",  "nprnews",  "ChelseaClinton",  "AliciaKeys",  "selenagomez",  "TheOnion",  "AP",  "EvaLongoria",  "aplusk",  "cnnbrk",  "Kaepernick7",  "JoeBiden",  "TheAtlantic",  "NASA_Mars",  "BreakingNews",  "MarkZuckerberg",  "justintimberlake",  "WhiteHouse",  "ABC",  "KendallJenner",  "Disney",  "CaraDelevingne",  "piersmorgan",  "KellyOsbourne",  "McDonalds",  "blakeshelton",  "katyperry",  "SnoopDogg",  "cnni",  "SHAQ",  "HuffPost",  "TheGRAMMYs",  "jack",  "GoogleMaps",  "MindyKaling",  "BBCNews",  "TIME",  "Ciara",  "kanyewest",  "TheDemocrats"]
+STATIC_JSON_TWEETS = [
+    {
+      "username": "elonmusk",
+      "tweet": "Mars is looking good today #SpaceX",
+      "timestamp": "2 hours ago",
+      "avatar": "https://pbs.twimg.com/profile_images/1411444620079907841/Pt-pI5n5_400x400.jpg"
+    },
+    {
+      "username": "BillGates",
+      "tweet": "I'm excited to share that my new book 'How to Avoid a Climate Disaster' is out today. I hope you'll check it out!",
+      "timestamp": "5 hours ago",
+      "avatar": "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg"
+    },
+    {
+      "username": "TheEllenShow",
+      "tweet": "Hey y'all, I'm excited to announce that I'm starting a new podcast! It's called 'Ellen on the Go' and it's all about my favorite moments from The Ellen Show. Check it out!",
+      "timestamp": "1 day ago",
+      "avatar": "https://pbs.twimg.com/profile_images/1019004248208553473/nmGlkUmK_400x400.jpg"
+    }
+]
+  
 
 if __name__ == '__main__':
     if 1 <= 2:

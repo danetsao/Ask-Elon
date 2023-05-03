@@ -38,20 +38,21 @@ const GeneratedResult: React.FC<ResultProps> = (props) => {
   const tweetsList = generateTweetObjects(props.info["tweets"]);
 
   return (
-    <div className={styles.container}>
-        <h1 className={styles.title}>Results</h1>
+    <div>
+        <div className={styles.container}>
+            <h1 className={styles.title}>@{props.info["username"]}</h1>
 
-        <p>{props.info["generated_tweet"]}</p>
-        <p>Username: {props.info["username"]}</p>
-        <p>Subject: {props.info["subject"]}</p>
+            <p className={styles.text}>{props.info["generated_tweet"]}</p>
+            <p className={styles.timestamp}></p>
 
-        <div className={styles.container}>{tweetsList}</div>
-
-        <div className={styles.buttons}>
-            <button onClick={()=> props.setHasResult(false)}>Back</button>
-            <button onClick={()=> props.onSubmit(props.info["username"], props.info["subject"])}>REGENERATE</button>
+                <button className={styles.buttons}onClick={()=> props.setHasResult(false)}>Back</button>
+                <button className={styles.buttons}onClick={()=> props.onSubmit(props.info["username"], props.info["subject"])}>Regenerate</button>
         </div>
-    </div>
+
+        <h1 className={styles.title}>Scraped Tweets</h1>
+
+        {tweetsList}
+  </div>
     );
 };
 

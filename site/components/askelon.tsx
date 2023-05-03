@@ -4,6 +4,7 @@ import React from "react";
 import GeneratedResult from "./generatedresult";
 import Form from "./form";
 import { User } from "aws-cdk-lib/aws-iam";
+import styles from "../styles/askelon.module.css";
 
 const AskElon: React.FC = () => {
 
@@ -67,9 +68,17 @@ const AskElon: React.FC = () => {
       />
     );
   }
+  const header = (
+    <div className={styles.header_container}>
+      <div>
+        <h1 className={styles.header_title}>Ask Elon</h1>
+      </div>
+    </div>
+  )
 
   return (
     <div>
+      {header}
       {displayedElement}
     </div>
   );
