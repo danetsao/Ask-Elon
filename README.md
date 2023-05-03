@@ -1,3 +1,7 @@
+# IMPORTANT NOTE
+
+This Project has been put on pause due to signifacant changes to the Twitter API. [Source](https://gist.github.com/moxak/ed83dd4169112a0b1669500fe855101a)
+
 
 # Ask Elon
 This is a tweet generating app that scrape users tweets and chains them into a unique fun tweet! Try it out yourself, live version coming soon.
@@ -7,7 +11,7 @@ This is a tweet generating app that scrape users tweets and chains them into a u
 | --------- | ------------------------------------------------------------ |
 | Language  | [Python](https://www.python.org/)                            |
 | Framework | [FastAPI](https://fastapi.tiangolo.com/)                     |
-| Hosting   | [Vercel](https://vercel.com).                                |
+| Hosting   | [Vercel](https://vercel.com)                                 |
 | Other     | [Twint](https://github.com/twintproject/twint)|
 
 #### Frontend Stack
@@ -36,7 +40,7 @@ Split your terminal
 Download dependancies
 
 ```bash
-  python -r requirements.txt
+  pip install -r requirements.txt
 ```
 Start server with Uvicorn
 ```bash
