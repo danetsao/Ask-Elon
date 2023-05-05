@@ -3,7 +3,6 @@ import { Result } from "postcss";
 import React from "react";
 import GeneratedResult from "./generatedresult";
 import Form from "./form";
-import { User } from "aws-cdk-lib/aws-iam";
 import styles from "../styles/askelon.module.css";
 
 const AskElon: React.FC = () => {
