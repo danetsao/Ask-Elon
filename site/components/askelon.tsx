@@ -8,7 +8,7 @@ import styles from "../styles/askelon.module.css";
 
 const AskElon: React.FC = () => {
 
-  const ENDPOINT = "http://127.0.0.1:8000";
+  const ENDPOINT = "https://ask-elon-api.vercel.app";
 
   const [isLoading, setIsLoading] = React.useState(false);
   const [HasResult, setHasResult] = React.useState(false);
