@@ -16,13 +16,12 @@ const GeneratedResult: React.FC<ResultProps> = (props) => {
       cur += "tweet " + jsonGeneratedTweets[i]["tweet"] + " ";
       cur += "timestamp " + jsonGeneratedTweets[i]["timestamp"];
       tweetObjects[i] = (
-        <div className={styles.tweet}>
+        <div className={styles.tweetContainer}>
           <div className={styles.avatar}>
-            <img src={jsonGeneratedTweets[i]["avatar"]} alt="avatar" />
           </div>
           <div className={styles.content}>
-            <div className={styles.username}>
-              {jsonGeneratedTweets[i]["username"]}
+            <div className={styles.title}>
+              @{jsonGeneratedTweets[i]["username"]}
             </div>
             <div className={styles.timestamp}>
               {jsonGeneratedTweets[i]["timestamp"]}
@@ -48,8 +47,9 @@ const GeneratedResult: React.FC<ResultProps> = (props) => {
                 <button className={styles.buttons}onClick={()=> props.setHasResult(false)}>Back</button>
                 <button className={styles.buttons}onClick={()=> props.onSubmit(props.info["username"], props.info["subject"])}>Regenerate</button>
         </div>
-
-        <h1 className={styles.title}>Scraped Tweets</h1>
+        <div className={styles.headerContainer}>
+          <h1 className={styles.header}>Scraped Tweets</h1>
+        </div>
 
         {tweetsList}
   </div>

@@ -67,10 +67,13 @@ const AskElon: React.FC = () => {
       />
     );
   }
+  function noResult() {
+    setHasResult(false);
+  }
   const header = (
     <div className={styles.header_container}>
       <div>
-        <h1 className={styles.header_title}>Ask Elon</h1>
+        <button onClick={noResult} className={styles.header_title}>Ask Elon</button>
       </div>
     </div>
   )

@@ -67,6 +67,7 @@ const Form: React.FC<FormProps> = (props) => {
           </button>
         </div>
       </form>
+      <p>Note: currently using dummy data due to break in Twint</p>
     </div>
   );
 };
