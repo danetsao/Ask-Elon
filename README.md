@@ -25,6 +25,13 @@ This is a tweet generating app that scrape users tweets and chains them into a u
 
 ## Try it yourself
 
+### Hosted via vercel here
+
+[API](https://ask-elon-api.vercel.app/)
+[SITE](https://ask-elon-site.vercel.app/)
+
+### Or run locally
+
 Clone the project
 
 ```bash
@@ -61,5 +68,3 @@ Start server with yarn
   yarn dev
 ```
 
-
-More updates coming soon...
