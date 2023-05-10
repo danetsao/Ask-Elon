@@ -70,6 +70,8 @@ const AskElon: React.FC = () => {
   function noResult() {
     setHasResult(false);
   }
+  const year = new Date().getFullYear();
+  const githubUrl = 'https://github.com/danetsao';
   const header = (
     <div className={styles.header_container}>
       <div>
@@ -77,11 +79,19 @@ const AskElon: React.FC = () => {
       </div>
     </div>
   )
+  const footer = (
+    <footer className={styles.footer}>
+      <p>
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">Dane Tsao</a> &copy; {year}
+      </p>
+    </footer>
+  );
 
   return (
     <div>
       {header}
       {displayedElement}
+      {footer}
     </div>
   );
 };
