@@ -9,11 +9,15 @@
   }
   
   .header_title {
+    display: flex;
+    justify-content: flex-end;
     font-size: 24px;
     font-weight: bold;
     color: white;
     margin: 0;
   }
+
+
   .footer {
     font-size: 24px;
     color: white;

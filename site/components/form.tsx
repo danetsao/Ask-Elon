@@ -67,7 +67,7 @@ const Form: React.FC<FormProps> = (props) => {
           </button>
         </div>
       </form>
-      <p>Note: currently using dummy data due to break in Twint</p>
+      <p>Note: currently using static scraped data due to update in Twitter API, and <a href="https://gist.github.com/moxak/ed83dd4169112a0b1669500fe855101a"><u>Twint</u></a>.</p>
     </div>
   );
 };

@@ -1,0 +1,80 @@
+/* Styles for the popup container */
+.popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(8px); /* Apply background blur effect */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+  }
+  
+  /* Styles for the popup content */
+  .popupContent {
+    position: relative;
+    background-color: #fff;
+    width: 500px;
+    height: 400;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styles for the close button */
+  .popupClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Styles for the close button icon */
+  .popupClose::before,
+  .popupClose::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .popupClose::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  .popupTextContent {
+    font-size: 22px;
+    text-align: center;
+    color: black;
+  }
+
+  .todoTitle {
+    padding: 5px;
+    color: black;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .contactLinks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .contactLinks a {
+    margin-right: 10px;
+    text-decoration: underline;
+    color: #1DA1F2;
+  }
+  
+.emoji {
+    font-size: 50px;
+}

@@ -3,6 +3,7 @@ import { Result } from "postcss";
 import React from "react";
 import GeneratedResult from "./generatedresult";
 import Form from "./form";
+import Popup from "./popup"
 import styles from "../styles/askelon.module.css";
 
 const AskElon: React.FC = () => {
@@ -13,6 +14,7 @@ const AskElon: React.FC = () => {
   const [HasResult, setHasResult] = React.useState(false);
   const [Username, setUsername] = React.useState("");
   const [Subject, setSubject] = React.useState("");
+  const [popUp, setPopUp] = React.useState(false);
   const [Data, setData] = React.useState({});
   const DEFAULT_SUBJECT = "china";
   const DEFAULT_USERNAME = "elonmusk";
@@ -45,6 +47,9 @@ const AskElon: React.FC = () => {
 
   let displayedElement = (<div>Displayed Element Inititalizer</div>);
 
+  if (popUp) {
+    console.log("showing popup of how-to");
+  } 
   if (HasResult) {
     displayedElement = (
       <GeneratedResult
@@ -70,6 +75,10 @@ const AskElon: React.FC = () => {
   function noResult() {
     setHasResult(false);
   }
+  function doPopUp() {
+    setHasResult(false);
+    setPopUp(true);
+  }
   const year = new Date().getFullYear();
   const githubUrl = 'https://github.com/danetsao';
   const header = (
@@ -77,8 +86,12 @@ const AskElon: React.FC = () => {
       <div>
         <button onClick={noResult} className={styles.header_title}>Ask Elon</button>
       </div>
+      <div>
+        <button onClick={doPopUp} className={styles.header_title} style={{ marginLeft: 'auto' }}>How to use?</button>
+      </div>
     </div>
-  )
+  );
+  
   const footer = (
     <footer className={styles.footer}>
       <p>
@@ -86,10 +99,16 @@ const AskElon: React.FC = () => {
       </p>
     </footer>
   );
+  function onClose() {
+    setPopUp(false);
+    setHasResult(false);
+  }
+  
 
   return (
     <div>
       {header}
+      {popUp && <Popup onClose={onClose}/>}
       {displayedElement}
       {footer}
     </div>
