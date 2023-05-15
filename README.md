@@ -35,7 +35,7 @@ This is a tweet generating app that scrape users tweets and chains them into a u
 Clone the project
 
 ```bash
-  git clone "https://github.com/danetsao/Ask-Elon"
+  git clone https://github.com/danetsao/Ask-Elon.git
 ```
 
 Split your terminal
