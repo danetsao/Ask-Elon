@@ -5,6 +5,7 @@ import GeneratedResult from "./generatedresult";
 import Form from "./form";
 import Popup from "./popup"
 import styles from "../styles/askelon.module.css";
+import Header from "./header";
 
 const AskElon: React.FC = () => {
 
@@ -79,18 +80,9 @@ const AskElon: React.FC = () => {
     setHasResult(false);
     setPopUp(true);
   }
+
+  const githubUrl = "github.com/danetsao/ask-elon";
   const year = new Date().getFullYear();
-  const githubUrl = 'https://github.com/danetsao';
-  const header = (
-    <div className={styles.header_container}>
-      <div>
-        <button onClick={noResult} className={styles.header_title}>Ask Elon</button>
-      </div>
-      <div>
-        <button onClick={doPopUp} className={styles.header_title} style={{ marginLeft: 'auto' }}>How to use?</button>
-      </div>
-    </div>
-  );
   
   const footer = (
     <footer className={styles.footer}>
@@ -103,11 +95,17 @@ const AskElon: React.FC = () => {
     setPopUp(false);
     setHasResult(false);
   }
+
+  const HeaderCur = ( 
+    <Header
+      doPopUp={doPopUp}
+      noResult={noResult}
+    />);
   
 
   return (
     <div>
-      {header}
+      {HeaderCur}
       {popUp && <Popup onClose={onClose}/>}
       {displayedElement}
       {footer}

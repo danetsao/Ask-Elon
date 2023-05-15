@@ -45,7 +45,7 @@ const GeneratedResult: React.FC<ResultProps> = (props) => {
             <p className={styles.timestamp}></p>
 
                 <button className={styles.buttons}onClick={()=> props.setHasResult(false)}>Back</button>
-                <button className={styles.buttons}onClick={()=> props.onSubmit(props.info["username"], props.info["subject"])}>Regenerate</button>
+                <button className={styles.button_regen}onClick={()=> props.onSubmit(props.info["username"], props.info["subject"])}>Regenerate</button>
         </div>
         <div className={styles.headerContainer}>
           <h1 className={styles.header}>Scraped Tweets</h1>

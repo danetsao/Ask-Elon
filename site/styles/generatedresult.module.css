@@ -11,6 +11,7 @@
   color: black;
   font-size: 40px;
 }
+
 .header {
   padding: 10px;
   font-size: 40px;
@@ -35,6 +36,25 @@
   margin-right: 10px;
   margin-top: 10px;
 }
+.button_regen {
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 4px;
+  color: #666;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.buttons:hover {
+  background-color: #1a91da;
+}
+
+.button_regen:hover {
+  background-color: #1a91da;
+}
+
 .tweetContainer {
   margin: 0 auto;
   max-width: 600px;
@@ -43,4 +63,10 @@
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 40px;
+
+  transition: transform 0.5s ease;
+}
+
+.tweetContainer:hover {
+  transform: scale(1.1);
 }
